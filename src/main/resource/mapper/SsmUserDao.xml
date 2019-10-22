@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCYTPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="com.ssm">
+    <sql id="userField">
+        a.name as "name",
+        a.password as "password"
+    </sql>
+
+    <!-- 获取所有用户 -->
+    <select id="findAll" resultType="com.ssm.model.SsmUser">
+        select
+        <include refid="userField"/>
+        from ssm_user as a
+    </select>
+
+</mapper>
